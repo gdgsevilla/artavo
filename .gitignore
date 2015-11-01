@@ -1,0 +1,7 @@
+/.idea
+.gradle
+/local.properties
+/Artavo.iml
+.DS_Store
+/build
+/captures
