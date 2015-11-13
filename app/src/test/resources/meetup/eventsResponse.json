@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "utc_offset": 7200000,
+      "venue": {
+        "country": "es",
+        "city": "Sevilla",
+        "address_1": "Avenida de Grecia 8, 41012",
+        "name": "Geographica",
+        "lon": -5.984609,
+        "id": 24141625,
+        "lat": 37.351486,
+        "repinned": false
+      },
+      "rsvp_limit": 30,
+      "headcount": 21,
+      "visibility": "public",
+      "waitlist_count": 0,
+      "created": 1444379399000,
+      "rating": {
+        "count": 1,
+        "average": 5
+      },
+      "maybe_rsvp_count": 0,
+      "description": "Event's description",
+      "event_url": "http://www.meetup.com/GDGSevilla/events/225942541/",
+      "yes_rsvp_count": 29,
+      "duration": 10800000,
+      "announced": true,
+      "name": "Max Firtman en Sevilla!",
+      "id": "225942541",
+      "time": 1445702400000,
+      "updated": 1445803173000,
+      "group": {
+        "join_mode": "open",
+        "created": 1444057312000,
+        "name": "GDGSevilla",
+        "group_lon": -5.980000019073486,
+        "id": 18997976,
+        "urlname": "GDGSevilla",
+        "group_lat": 37.400001525878906,
+        "who": "Members"
+      },
+      "status": "past"
+    }
+  ],
+  "meta": {
+    "next": ",",
+    "method": "Events",
+    "total_count": 1,
+    "link": "https://api.meetup.com/2/events",
+    "count": 1,
+    "description": "Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](/meetup_api/docs/2/open_events).",
+    "lon": ",",
+    "title": "Meetup Events v2",
+    "url": "https://api.meetup.com/2/events?offset=0&sign=True&format=json&limited_events=False&group_id=18997976&photo-host=public&page=20&fields=&order=time&status=past&desc=false",
+    "signed_url": "https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_id=18997976&photo-host=public&page=20&fields=&order=time&status=past&desc=false&sig_id=128433312&sig=9c7a84a0dac3467f0418baf24ad116f8ec0b3314",
+    "id": ",",
+    "updated": 1445803173000,
+    "lat": ""
+  }
+}
