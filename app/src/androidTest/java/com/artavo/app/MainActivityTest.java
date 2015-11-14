@@ -23,8 +23,11 @@ import org.mockito.stubbing.Answer;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.artavo.app.CustomMatchers.hasItemsCount;
+import static com.artavo.app.CustomMatchers.nthChildOf;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -71,7 +74,7 @@ public class MainActivityTest {
                 ((MainActivity) invocation.getArguments()[1]).onEvents(Arrays.asList(defaultEvent));
                 return null;
             }
-        }).when(eventsFetcher).getEventsFrom("id", mainActivity);
+        }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);
 
 
         // when:
@@ -79,5 +82,26 @@ public class MainActivityTest {
 
         // then:
         onView(withId(R.id.eventList)).check(hasItemsCount(1));
+    }
+
+    @Test
+    public void shouldDisplayTheEventNameInARow() {
+        // given:
+        MainActivity mainActivity = activityRule.launchActivity(new Intent());
+
+        Mockito.doAnswer(new Answer() {
+            @Override
+            public Object answer(final InvocationOnMock invocation) throws Throwable {
+                ((MainActivity) invocation.getArguments()[1]).onEvents(Arrays.asList(defaultEvent));
+                return null;
+            }
+        }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);
+
+
+        // when:
+        onView(withId(R.id.fetchEvents)).perform(click());
+
+        // then:
+        onView(nthChildOf(withId(R.id.eventList), 0)).check(matches(withText("Max Firtman en Sevilla!")));
     }
 }
