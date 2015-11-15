@@ -28,29 +28,4 @@ public class MeetupRating {
         this.average = average;
     }
 
-    @Override
-    public String toString() {
-        return "MeetupRating{" +
-            "count=" + count +
-            ", average=" + average +
-            '}';
-    }
-
-    @Override
-    public boolean equals(final Object o) {
-        if (this == o) return true;
-        if (!(o instanceof MeetupRating)) return false;
-
-        final MeetupRating that = (MeetupRating) o;
-
-        if (count != that.count) return false;
-        return average == that.average;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = count;
-        result = 31 * result + average;
-        return result;
-    }
 }
