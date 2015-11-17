@@ -1,4 +1,4 @@
-package com.artavo.app.meetup;
+package com.artavo.core.meetup;
 
 public class MeetupRating {
 

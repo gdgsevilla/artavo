@@ -1,6 +1,6 @@
-package com.artavo.app;
+package com.artavo.core.meetup;
 
-import com.artavo.app.meetup.MeetupEventsResponse;
+import com.artavo.core.meetup.MeetupEventsResponse;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Query;

@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import com.artavo.app.meetup.MeetupEvent;
-import com.artavo.app.meetup.MeetupGroup;
-import com.artavo.app.meetup.MeetupRating;
-import com.artavo.app.meetup.MeetupVenue;
+import com.artavo.core.EventsFetcher;
+import com.artavo.core.meetup.MeetupEvent;
+import com.artavo.core.meetup.MeetupGroup;
+import com.artavo.core.meetup.MeetupRating;
+import com.artavo.core.meetup.MeetupVenue;
 import dagger.Component;
 import java.util.Arrays;
+import java.util.Collections;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import org.junit.Before;
@@ -30,7 +32,7 @@ import static com.artavo.app.CustomMatchers.hasItemsCount;
 import static com.artavo.app.CustomMatchers.nthChildOf;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTest {
+public class EventsCreatedActivityTest {
 
     @Inject
     EventsFetcher eventsFetcher;
@@ -40,11 +42,11 @@ public class MainActivityTest {
     @Singleton
     @Component(modules = MockMeetupModule.class)
     public interface TestComponent extends MeetupComponent {
-        void inject(MainActivityTest mainActivityTest);
+        void inject(EventsCreatedActivityTest eventsCreatedActivityTest);
     }
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class, true, false);
+    public ActivityTestRule<EventsCreatedActivity> activityRule = new ActivityTestRule<>(EventsCreatedActivity.class, true, false);
 
     @Before
     public void setUp() {
@@ -66,12 +68,12 @@ public class MainActivityTest {
     @Test
     public void shouldHaveTheSameEventsCountThatRetrieved() {
         // given:
-        MainActivity mainActivity = activityRule.launchActivity(new Intent());
+        EventsCreatedActivity mainActivity = activityRule.launchActivity(new Intent());
 
         Mockito.doAnswer(new Answer() {
             @Override
             public Object answer(final InvocationOnMock invocation) throws Throwable {
-                ((MainActivity) invocation.getArguments()[1]).onEvents(Arrays.asList(defaultEvent));
+                ((EventsCreatedActivity) invocation.getArguments()[1]).onEvents(Collections.singletonList(defaultEvent));
                 return null;
             }
         }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);
@@ -87,12 +89,12 @@ public class MainActivityTest {
     @Test
     public void shouldDisplayTheEventNameInARow() {
         // given:
-        MainActivity mainActivity = activityRule.launchActivity(new Intent());
+        EventsCreatedActivity mainActivity = activityRule.launchActivity(new Intent());
 
         Mockito.doAnswer(new Answer() {
             @Override
             public Object answer(final InvocationOnMock invocation) throws Throwable {
-                ((MainActivity) invocation.getArguments()[1]).onEvents(Arrays.asList(defaultEvent));
+                ((EventsCreatedActivity) invocation.getArguments()[1]).onEvents(Collections.singletonList(defaultEvent));
                 return null;
             }
         }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);

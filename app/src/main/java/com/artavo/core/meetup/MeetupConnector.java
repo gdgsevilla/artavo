@@ -1,6 +1,7 @@
-package com.artavo.app;
+package com.artavo.core.meetup;
 
-import com.artavo.app.meetup.MeetupEventsResponse;
+import com.artavo.core.EventsFetcher;
+import com.artavo.core.EventsListener;
 import retrofit.Call;
 import retrofit.Callback;
 import retrofit.JacksonConverterFactory;

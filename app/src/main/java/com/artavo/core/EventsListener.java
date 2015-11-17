@@ -1,6 +1,6 @@
-package com.artavo.app;
+package com.artavo.core;
 
-import com.artavo.app.meetup.MeetupEvent;
+import com.artavo.core.meetup.MeetupEvent;
 import java.util.List;
 
 public interface EventsListener {

@@ -1,4 +1,4 @@
-package com.artavo.app;
+package com.artavo.core;
 
 public interface EventsFetcher {
 

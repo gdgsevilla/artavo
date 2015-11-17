@@ -1,5 +1,10 @@
 package com.artavo.app.meetup;
 
+import com.artavo.core.meetup.MeetupEvent;
+import com.artavo.core.meetup.MeetupEventsResponse;
+import com.artavo.core.meetup.MeetupGroup;
+import com.artavo.core.meetup.MeetupRating;
+import com.artavo.core.meetup.MeetupVenue;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeDiagnosingMatcher;

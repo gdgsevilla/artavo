@@ -7,11 +7,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import com.artavo.app.meetup.MeetupEvent;
+import com.artavo.core.EventsFetcher;
+import com.artavo.core.EventsListener;
+import com.artavo.core.meetup.MeetupEvent;
 import java.util.List;
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity implements EventsListener, View.OnClickListener {
+public class EventsCreatedActivity extends AppCompatActivity implements EventsListener, View.OnClickListener {
 
     @Inject
     EventsFetcher eventsFetcher;

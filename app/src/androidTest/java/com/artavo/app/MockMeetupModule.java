@@ -1,5 +1,6 @@
 package com.artavo.app;
 
+import com.artavo.core.EventsFetcher;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
