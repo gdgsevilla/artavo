@@ -1,6 +1,6 @@
-package com.artavo.core;
+package com.artavo.core.presenter;
 
-import com.artavo.core.meetup.MeetupEvent;
+import com.artavo.core.model.meetup.MeetupEvent;
 import java.util.List;
 
 public interface EventsListener {

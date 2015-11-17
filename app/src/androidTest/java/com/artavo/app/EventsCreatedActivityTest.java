@@ -5,16 +5,12 @@ import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import com.artavo.core.EventsFetcher;
-import com.artavo.core.meetup.MeetupEvent;
-import com.artavo.core.meetup.MeetupGroup;
-import com.artavo.core.meetup.MeetupRating;
-import com.artavo.core.meetup.MeetupVenue;
+import com.artavo.core.model.meetup.MeetupEvent;
+import com.artavo.core.model.meetup.MeetupGroup;
+import com.artavo.core.model.meetup.MeetupRating;
+import com.artavo.core.model.meetup.MeetupVenue;
+import com.artavo.core.presenter.EventsFetcher;
 import dagger.Component;
-import java.util.Arrays;
-import java.util.Collections;
-import javax.inject.Inject;
-import javax.inject.Singleton;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -23,12 +19,15 @@ import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import java.util.Collections;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static com.artavo.app.CustomMatchers.hasItemsCount;
 import static com.artavo.app.CustomMatchers.nthChildOf;
 
 @RunWith(AndroidJUnit4.class)
@@ -66,27 +65,6 @@ public class EventsCreatedActivityTest {
     }
 
     @Test
-    public void shouldHaveTheSameEventsCountThatRetrieved() {
-        // given:
-        EventsCreatedActivity mainActivity = activityRule.launchActivity(new Intent());
-
-        Mockito.doAnswer(new Answer() {
-            @Override
-            public Object answer(final InvocationOnMock invocation) throws Throwable {
-                ((EventsCreatedActivity) invocation.getArguments()[1]).onEvents(Collections.singletonList(defaultEvent));
-                return null;
-            }
-        }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);
-
-
-        // when:
-        onView(withId(R.id.fetchEvents)).perform(click());
-
-        // then:
-        onView(withId(R.id.eventList)).check(hasItemsCount(1));
-    }
-
-    @Test
     public void shouldDisplayTheEventNameInARow() {
         // given:
         EventsCreatedActivity mainActivity = activityRule.launchActivity(new Intent());
@@ -97,7 +75,7 @@ public class EventsCreatedActivityTest {
                 ((EventsCreatedActivity) invocation.getArguments()[1]).onEvents(Collections.singletonList(defaultEvent));
                 return null;
             }
-        }).when(eventsFetcher).getEventsFrom("18997976", mainActivity);
+        }).when(eventsFetcher).fetchCreatedEventsFor("18997976", mainActivity);
 
 
         // when:

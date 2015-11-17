@@ -13,7 +13,8 @@ public class App extends Application {
 
     private MeetupComponent component = null;
 
-    @Override public void onCreate() {
+    @Override
+    public void onCreate() {
         super.onCreate();
         if (component == null) {
             component = DaggerApp_ApplicationComponent.builder()

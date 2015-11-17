@@ -1,4 +1,4 @@
-package com.artavo.core.meetup;
+package com.artavo.core.model.meetup;
 
 import java.util.List;
 

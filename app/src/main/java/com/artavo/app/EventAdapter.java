@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.artavo.core.meetup.MeetupEvent;
+import com.artavo.core.model.meetup.MeetupEvent;
 import java.util.List;
 
 class EventAdapter extends RecyclerView.Adapter<EventViewHolder> {
