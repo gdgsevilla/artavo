@@ -6,7 +6,5 @@ import java.util.Set;
 
 public interface EventsFetcher {
 
-    void fetchCreatedEventsFor(String groupId, EventsListener listener);
-
     void fetchCreatedEventsFor(Set<MeetupGroup> groups, RetrievedCreatedEventsListener retrievedCreatedEventsListener);
 }

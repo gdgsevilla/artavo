@@ -57,7 +57,8 @@ public class EventsCreatedActivity extends AppCompatActivity implements EventsLi
 
     @Override
     public void onClick(final View view) {
-        eventsFetcher.fetchCreatedEventsFor("18997976", this);
+        //peaaso de llamada al EventsCreatedView para que nos traiga los datos
+        //Al loro que para eso, la activity tendrá que implementar el interfaz correspondiente
     }
 
     @Override

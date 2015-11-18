@@ -17,17 +17,16 @@ public class EventsCreatedPresenter implements RetrievedCreatedEventsListener {
         this.groupRepository = groupRepository;
     }
 
-    @Override
-    public void retrievedCreatedEvents(final List<MeetupEvent> meetupEvents) {
-        //Potential transformation of meetupEvents
-        viewUpdater.updateEventList(meetupEvents);
-    }
-
     public void fetchCreatedEvents(final ViewUpdater viewUpdater) {
-        //TODO: EEEEWWWWW
         this.viewUpdater = viewUpdater;
 
         final Set<MeetupGroup> groups = groupRepository.getGroups();
         eventsFetcher.fetchCreatedEventsFor(groups, this);
+    }
+
+    @Override
+    public void retrievedCreatedEvents(final List<MeetupEvent> meetupEvents) {
+        //Potential transformation of meetupEvents
+        viewUpdater.updateEventList(meetupEvents);
     }
 }
