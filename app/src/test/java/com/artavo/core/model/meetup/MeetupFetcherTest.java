@@ -1,6 +1,6 @@
 package com.artavo.core.model.meetup;
 
-import com.artavo.app.testUtils.MeetupEventTestBuilder;
+import com.artavo.testUtils.MeetupEventTestBuilder;
 import com.artavo.core.presenter.RetrievedCreatedEventsListener;
 import org.junit.Before;
 import org.junit.Test;

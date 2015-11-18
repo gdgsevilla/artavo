@@ -1,4 +1,4 @@
-package com.artavo.app.testUtils;
+package com.artavo.testUtils;
 
 import com.artavo.core.model.meetup.MeetupVenue;
 import org.hamcrest.Description;

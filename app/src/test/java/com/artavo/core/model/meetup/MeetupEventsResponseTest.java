@@ -1,6 +1,6 @@
-package com.artavo.app.meetup;
+package com.artavo.core.model.meetup;
 
-import com.artavo.app.testUtils.MeetupEventTestBuilder;
+import com.artavo.testUtils.MeetupEventTestBuilder;
 import com.artavo.core.model.meetup.MeetupEvent;
 import com.artavo.core.model.meetup.MeetupEventsResponse;
 import com.artavo.core.model.meetup.MeetupGroup;
@@ -11,9 +11,9 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static com.artavo.app.testUtils.MeetupEventMatcher.hasTheSameEventId;
-import static com.artavo.app.testUtils.MeetupRatingMatcher.hasTheSameCount;
-import static com.artavo.app.testUtils.MeetupVenueMatcher.hasTheSameVenueId;
+import static com.artavo.testUtils.MeetupEventMatcher.hasTheSameEventId;
+import static com.artavo.testUtils.MeetupRatingMatcher.hasTheSameCount;
+import static com.artavo.testUtils.MeetupVenueMatcher.hasTheSameVenueId;
 import static org.junit.Assert.assertThat;
 
 public class MeetupEventsResponseTest {

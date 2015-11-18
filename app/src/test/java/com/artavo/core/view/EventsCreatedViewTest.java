@@ -1,12 +1,11 @@
-package com.artavo;
+package com.artavo.core.view;
 
-import com.artavo.app.testUtils.MeetupEventTestBuilder;
 import com.artavo.core.model.meetup.MeetupEvent;
 import com.artavo.core.model.meetup.MeetupGroup;
 import com.artavo.core.presenter.EventsCreatedPresenter;
 import com.artavo.core.presenter.EventsFetcher;
 import com.artavo.core.presenter.GroupsRepository;
-import com.artavo.core.view.EventsCreatedView;
+import com.artavo.testUtils.MeetupEventTestBuilder;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;

@@ -1,4 +1,4 @@
-package com.artavo;
+package com.artavo.core.view;
 
 import com.artavo.core.model.meetup.MeetupEvent;
 
