@@ -1,4 +1,4 @@
-package com.artavo.app;
+package com.artavo.app.tests;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
